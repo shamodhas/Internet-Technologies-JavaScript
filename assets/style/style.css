@@ -1,0 +1,64 @@
+.navbar-brand{
+    font-weight: bold;
+    color: #3498db;
+}
+.nav-link{
+    color: #2ecc71;
+}
+nav{
+    /*height: 10%;*/
+}
+td {border: 1px #DDD solid; padding: 5px; cursor: pointer;}
+
+.selected {
+    background-color: brown;
+    color: #FFF;
+}
+#main{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+.carousel-item{
+    height: 650px;
+    background-color: #ffffff;
+}
+.carousel-item img{
+    width: 80%;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+#order .container-fluid > .row > div{
+    background-color: #ffffff;
+    border: 15px solid #bdc3c7;
+}
+#order .container-fluid > .row > div span,
+#item .container-fluid > div > div:first-child,
+#customer .container-fluid > div > div:first-child{
+    background-color: #3498db;
+    color: #ffffff;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+}
+#order,#item,#customer{
+    border: 2px solid #95a5a6;
+    width: 100%;
+    background-color: #bdc3c7;
+}
+#order h6,#item h6,#customer h6{
+    font-size: 12px;
+    border: 1px solid #95a5a6;
+    padding: 5px;
+}
+.summery{
+    position: relative;
+    top: 15px;
+}
+.summery div{
+    border: 5px solid transparent;
+    position: relative;
+    top: 15px;
+}

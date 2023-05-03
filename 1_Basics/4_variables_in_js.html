@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variables in js</title>
+</head>
+<body>
+<script>
+    // var is declaration (1996 to 2015 only var for variable, Es6 update 2015)
+    // name is variable name
+    // shamodha is value
+    var name = "shamodha";
+
+    var string = "string data";
+    var boolean = true;
+    var int = 1;
+    var double = 1.8;
+
+    // JavaScript has 8 DataTypes
+        //     1 String
+        //     2 Number
+        //     3 Bigint
+        //     4 Boolean
+        //     5 Undefined
+        //     6 Null
+        //     7 Symbol
+        //     8 Object
+
+    //---------------- variable declaration ----------------
+        // var
+            {
+                var noScope = "scope";
+                console.log(noScope);
+            }
+            console.log(noScope); // var has no scope
+
+        // let
+            {
+                let scope = "scope";
+                console.log(scope);
+            }
+            // console.log(scope); // let has scope so can't access here
+
+        // const
+            {
+                const c = "IJSE"; // same as java final
+                // c = "GDSE" // const can't change
+            }
+            // console.log(c); // const has scope so can't access here
+
+        // can duplicate variable names
+            var x = "hi var";
+            var x = "hello var";
+            let x = "hi let";
+            let x = "hello let";
+            const x = "hi const";
+
+        // The general rules for constructing names for variables (unique identifiers) are:
+        //
+        //     🔹 Names can contain letters, digits, underscores, and dollar signs.
+        //     🔹 Names must begin with a letter.
+        //     🔹 Names can also begin with $ and _.
+        //     🔹 Names are case sensitive (y and Y are different variables).
+        //     🔹   Reserved words (like JavaScript keywords) cannot be used as names.
+
+
+
+</script>
+</body>
+</html>

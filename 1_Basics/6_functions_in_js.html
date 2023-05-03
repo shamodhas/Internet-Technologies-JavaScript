@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function in js</title>
+</head>
+<body>
+<script>
+    /*
+     * function = method in java
+     * there are 4 ways a function can be created in js.
+    */
+
+    // 1. a function as a statement
+        function myFunction1(){
+            console.log("my function");
+        }
+        function myFunction2(a, b){
+            console.log("sum : ",a+b);
+        }
+        function myFunction3(a, b){
+            let sum = a+b;
+            return sum;
+        }
+
+        //calling these function
+        myFunction1();
+
+        myFunction2(2,3);
+
+        var result = myFunction3(1,5);
+        console.log(result);
+
+    // 2. a function as an expression
+        var myFunction4 = function (){
+            console.log("function 4");
+        }
+        var myFunction5 = function (a, b){
+            console.log("sum :", a+b);
+        }
+        var myFunction6 = function (a, b){
+            let sum = a+b;
+            return sum;
+        }
+
+        //calling these function
+        myFunction4();
+
+        myFunction5(10, 20);
+
+        var result2 = myFunction6(10, 30);
+        console.log(result2);
+
+    // 3. a function as an arrow function ( introduced in ES6)
+        const myFunction7 = () => {
+            console.log("my function 7");
+        }
+        const myFunction8 = (a, b) => {
+            console.log("sum ",a+b);
+        }
+        const myFunction9 = (a, b) => {
+            let sum = a+b;
+            return sum;
+        }
+
+        //calling these function
+        myFunction7();
+
+        myFunction8(20, 50);
+
+        var result9 = myFunction9(15, 40);
+        console.log(result9);
+
+        // $('button').click((e) => {
+        //
+        // })
+
+    // 4. a function created using the function constructor
+        const myFunction10 = new Function("a", "b", "return a + b");
+        var result10 = myFunction10(40,20);
+        console.log(result10);
+
+
+</script>
+</body>
+</html>
