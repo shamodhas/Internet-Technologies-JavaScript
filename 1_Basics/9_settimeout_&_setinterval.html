@@ -7,9 +7,18 @@
 <body>
 <h1>loading... wait 5s</h1>
 <script>
+    // *********************** Set Time Delay ***********************
+    /* wait and watch -> work -> end*/
     setTimeout(() => {
         document.getElementsByTagName("h1")[0].innerText = "loading end";
     },5000)
+
+    // *********************** Set Time Delay ***********************
+    /* watch and loop work*/
+    setInterval(()=>{
+        console.log("Hello");
+    },2000)
+
 </script>
 </body>
 </html>

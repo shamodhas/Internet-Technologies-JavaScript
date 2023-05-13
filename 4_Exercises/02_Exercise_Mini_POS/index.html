@@ -77,51 +77,56 @@
     });
 */
 
-    $('#btn_add').click(function () {
-        // var customer_id = document.getElementById("customer_id").value;
-        // var customer_first_name = document.getElementById("first_name").value;
-        // var customer_last_name = document.getElementById("last_name").value;
-        // var customer_address = document.getElementById("customer_address").value;
+var customerArr = [];
+$('#btn_add').click(function () {
+    // var customer_id = document.getElementById("customer_id").value;
+    // var customer_first_name = document.getElementById("first_name").value;
+    // var customer_last_name = document.getElementById("last_name").value;
+    // var customer_address = document.getElementById("customer_address").value;
 
-        var customer_id = $('#customer_id').val();
-        var customer_first_name = $('#first_name').val();
-        var customer_last_name = $('#last_name').val();
-        var customer_address =  $('#customer_address').val();
+    var customer_id = $('#customer_id').val();
+    var customer_first_name = $('#first_name').val();
+    var customer_last_name = $('#last_name').val();
+    var customer_address =  $('#customer_address').val();
 
-        // console.log(customer_id);
-        // console.log(customer_first_name);
-        // console.log(customer_last_name);
-        // console.log(customer_address);
-
-
-        /*
-        <tr>
-            <td scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>123A, flower Rd, Colombo</td>
-        </tr>
-        */
-        var obj = {
-            customer_id: customer_id,
-            customer_first_name: customer_first_name,
-            customer_last_name: customer_last_name,
-            customer_address: customer_address
-        }
-
-        alert(JSON.stringify(obj));
-
-        var row = "<tr>" +
-            "<td>"+ customer_id +"</td>" +
-            "<td>"+ customer_first_name +"</td>" +
-            "<td>"+ customer_last_name +"</td>" +
-            "<td>"+ customer_address +"</td>" +
-            "</tr>";
+    // console.log(customer_id);
+    // console.log(customer_first_name);
+    // console.log(customer_last_name);
+    // console.log(customer_address);
 
 
-        $('tbody').append(row);
+    /*
+    <tr>
+        <td scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>123A, flower Rd, Colombo</td>
+    </tr>
+    */
+    var obj = {
+        customer_id: customer_id,
+        customer_first_name: customer_first_name,
+        customer_last_name: customer_last_name,
+        customer_address: customer_address
+    }
 
-    })
+    // alert(JSON.stringify(obj));
+
+    var row = "<tr>" +
+        "<td>"+ customer_id +"</td>" +
+        "<td>"+ customer_first_name +"</td>" +
+        "<td>"+ customer_last_name +"</td>" +
+        "<td>"+ customer_address +"</td>" +
+        "</tr>";
+
+
+    $('tbody').append(row);
+
+    customerArr.push(obj);
+
+    console.log(customerArr.length);
+})
+
 
 </script>
 
