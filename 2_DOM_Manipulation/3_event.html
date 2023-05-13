@@ -31,112 +31,153 @@
         <h3>Width : <span></span></h3>
         <h3>Height : <span></span></h3>
     </div>
+    <form id="myForm">
+        <label>Name</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br>
+        <br>
+        <label>Email</label>
+        <br>
+        <input type="emai" id="email" name="email">
+        <br>
+        <br>
+        <label for="fruit">Select a fruit:</label>
+        <select id="fruit">
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="orange">Orange</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
     <script src="../assets/lib/jQuery/jquery-3.6.4.min.js"></script>
     <script>
-        // ------------------------- Mouse Event -------------------------
 
-        // $('#btn-my').on('click', () =>{
-        //     alert("single click");
-        // })
+        // ************************* Event *************************
+            // ------------------------- Mouse Event -------------------------
 
-        // $('#btn-my').on('dblclick', () =>{
-        //     alert("double click");
-        // })
+            // $('#btn-my').on('click', () =>{
+            //     alert("single click");
+            // })
 
-        // $('#btn-my').on('mousedown', () =>{
-        //     alert("mouse down ( clicked run )");
-        // })
+            // $('#btn-my').on('dblclick', () =>{
+            //     alert("double click");
+            // })
 
-        // $('#btn-my').on('mouseup', () =>{
-        //     alert("mouse up (click and hold and up run)");
-        // })
+            // $('#btn-my').on('mousedown', () =>{
+            //     alert("mouse down ( clicked run )");
+            // })
 
-        // $('#btn-my').on('mousemove', () =>{
-        //     alert("mouse moved ( like css hover)");
-        // })
+            // $('#btn-my').on('mouseup', () =>{
+            //     alert("mouse up (click and hold and up run)");
+            // })
 
-        // $('body').on('mousemove', (event) =>{
-        //     let mouseX = event.clientX;
-        //     let mouseY = event.clientY;
-        //     $('#follower').css({left: mouseX-40, top: mouseY-40}); // follow mouse cursor
-        // })
+            // $('#btn-my').on('mousemove', () =>{
+            //     alert("mouse moved ( like css hover)");
+            // })
 
-        // $('#area').on('mouseleave', () =>{
-        //     alert("mouse leaved ( go outside element)");
-        // })
+            // $('body').on('mousemove', (event) =>{
+            //     let mouseX = event.clientX;
+            //     let mouseY = event.clientY;
+            //     $('#follower').css({left: mouseX-40, top: mouseY-40}); // follow mouse cursor
+            // })
 
-        // $('#area').on('mouseover', () =>{
-        //     alert("mouse over ( go inside element)");
-        // })
+            // $('#area').on('mouseleave', () =>{
+            //     alert("mouse leaved ( go outside element)");
+            // })
 
-        // ------------------------- Mouse Wheel -------------------------
+            // $('#area').on('mouseover', () =>{
+            //     alert("mouse over ( go inside element)");
+            // })
 
-        /*$('body').on('wheel', () => {
-            alert("Mouse wheeled");
-        })*/
+            // ------------------------- Mouse Wheel -------------------------
 
-        // ------------------------- Keyboard Event -------------------------
+            /*$('body').on('wheel', () => {
+                alert("Mouse wheeled");
+            })*/
 
-        // 1. key down
-        // $('#txt-my').on('keydown', () =>{
-        //     alert("key down");
-        // })
+            // ------------------------- Keyboard Event -------------------------
 
-        // 2. key press
-        // $('#txt-my').on('keypress', () =>{
-        //     alert("key press");
-        // })
+            // 1. key down
+            // $('#txt-my').on('keydown', () =>{
+            //     alert("key down");
+            // })
 
-        // 3. key up
-        // $('#txt-my').on('keyup', () =>{
-        //     alert("key up");
-        // })
+            // 2. key press
+            // $('#txt-my').on('keypress', () =>{
+            //     alert("key press");
+            // })
 
-        // $('#txt-my').on('keypress', (event) =>{
-        //     if (event.key === "Enter"){
-        //         $('#myTitle').text($('#txt-my').val())
-        //     }
-        // })
+            // 3. key up
+            // $('#txt-my').on('keyup', () =>{
+            //     alert("key up");
+            // })
+
+            // $('#txt-my').on('keypress', (event) =>{
+            //     if (event.key === "Enter"){
+            //         $('#myTitle').text($('#txt-my').val())
+            //     }
+            // })
 
 
-        //----------------- Focus Events -------------------//
+            //----------------- Focus Events -------------------//
 
-        // 1. focus in
-        // $('#txt-my').on('focus', () =>{
-        //     console.log("Focused!");
-        // })
+            // 1. focus in
+            // $('#txt-my').on('focus', () =>{
+            //     console.log("Focused!");
+            // })
 
-        //  2. focus
-        // $('#txt-my').on('focusin', () =>{
-        //     console.log("Focused In!");
-        // })
+            //  2. focus
+            // $('#txt-my').on('focusin', () =>{
+            //     console.log("Focused In!");
+            // })
 
-        //  3. focus out
-        // $('#txt-my').on('focusout', () =>{
-        //     console.log("Focused Out!");
-        // })
+            //  3. focus out
+            // $('#txt-my').on('focusout', () =>{
+            //     console.log("Focused Out!");
+            // })
 
-        //  4. blur
-        // $('#txt-my').on('blur', () =>{
-        //     console.log("blur!");
-        // })
+            //  4. blur
+            // $('#txt-my').on('blur', () =>{
+            //     console.log("blur!");
+            // })
 
-        //----------------- Window Events-------------------//
-        /*    work with window ( browser object model - BOM )*/
+        // ************************* Window Events *************************
+            /*    work with window ( browser object model - BOM )*/
 
-        // $(window).on('load', ()=> {
-        //     alert("Loaded"); // loaded to all to web page detect
-        // })
+            // $(window).on('load', ()=> {
+            //     alert("Loaded"); // loaded to all to web page detect
+            // })
 
-        // $(window).on('resize',  ()=> {
-        //     alert("resized ")  // resized browser window size detect
-        // })
+            // $(window).on('resize',  ()=> {
+            //     alert("resized ")  // resized browser window size detect
+            // })
 
-        // $(window).on('resize',  (event)=> {
-        //     $('#width-height > h3:first-child  span').text($(window).width()); // get now width
-        //     $('#width-height > h3:nth-child(2) span').text($(window).height()); // get now height
-        // })
+            // $(window).on('resize',  (event)=> {
+            //     $('#width-height > h3:first-child  span').text($(window).width()); // get now browser window width
+            //     $('#width-height > h3:nth-child(2) span').text($(window).height()); // get now browser window height
+            // })
 
+            //----------------- Scroll -------------------//
+
+            // $(window).on('scroll',  ()=> {
+            //     alert("scrolled ")
+            // })
+
+            // $(window).on('scroll',  ()=> {
+            //     console.log("scrolling length on top : "+$(window).scrollTop())
+            // })
+
+        $('#name').on('input', (event)=>{
+            console.log("input name value : "+event.target.value)
+        })
+        $('#email').on('input', (event)=>{
+            console.log("input email value : "+event.target.value)
+        })
 
     </script>
 </body>
