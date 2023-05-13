@@ -57,8 +57,7 @@
     <script src="../assets/lib/jQuery/jquery-3.6.4.min.js"></script>
     <script>
 
-        // ************************* Event *************************
-            // ------------------------- Mouse Event -------------------------
+        // ************************* Mouse Event *************************
 
             // $('#btn-my').on('click', () =>{
             //     alert("single click");
@@ -94,13 +93,13 @@
             //     alert("mouse over ( go inside element)");
             // })
 
-            // ------------------------- Mouse Wheel -------------------------
+        // ************************* Mouse Wheel *************************
 
             /*$('body').on('wheel', () => {
                 alert("Mouse wheeled");
             })*/
 
-            // ------------------------- Keyboard Event -------------------------
+        // ************************* Keyboard Event *************************
 
             // 1. key down
             // $('#txt-my').on('keydown', () =>{
@@ -124,7 +123,7 @@
             // })
 
 
-            //----------------- Focus Events -------------------//
+        // ************************* Focus Events *************************
 
             // 1. focus in
             // $('#txt-my').on('focus', () =>{
@@ -162,7 +161,7 @@
             //     $('#width-height > h3:nth-child(2) span').text($(window).height()); // get now browser window height
             // })
 
-            //----------------- Scroll -------------------//
+            // ----------------- Scroll ------------------- //
 
             // $(window).on('scroll',  ()=> {
             //     alert("scrolled ")
@@ -172,12 +171,27 @@
             //     console.log("scrolling length on top : "+$(window).scrollTop())
             // })
 
-        $('#name').on('input', (event)=>{
-            console.log("input name value : "+event.target.value)
-        })
-        $('#email').on('input', (event)=>{
-            console.log("input email value : "+event.target.value)
-        })
+        // ************************* Form Events *************************
+            // ----------------- input ------------------- //
+
+            $('#name').on('input', (event)=>{
+                console.log("input name value : "+event.target.value)
+            })
+            $('#email').on('input', (event)=>{
+                console.log("input email value : "+event.target.value)
+            })
+
+            // ----------------- Change ------------------- //
+
+            $('#fruit').on('change', (event)=>{
+                console.log("changed value : "+event.target.value)
+            })
+
+            // ----------------- Submit ------------------- //
+
+            $('#myForm').on('submit', ()=>{
+                console.log("Submitted")
+            })
 
     </script>
 </body>
