@@ -127,6 +127,38 @@ $('#btn_add').click(function () {
     console.log(customerArr.length);
 })
 
+function addDataToTable(){
+    // for (let customer of customerArr){
+    //     let row = "<tr>" +
+    //         "<td>"+ customer.customer_id +"</td>" +
+    //         "<td>"+ customer.customer_first_name +"</td>" +
+    //         "<td>"+ customer.customer_last_name +"</td>" +
+    //         "<td>"+ customer.customer_address +"</td>" +
+    //         "</tr>";
+    //     $('tbody').append(row);
+    // }
+
+    customerArr.map((result, index)=>{ // result - value,
+        let row = "<tr>" +
+            "<td>" + result.customer_id + "</td>" +
+            "<td>" + result.customer_first_name + "</td>" +
+            "<td>" + result.customer_last_name + "</td>" +
+            "<td>" + result.customer_address + "</td>" +
+            "</tr>";
+        $('tbody').append(row);
+    })
+
+    // for (let i=0; i<customerArr.length; i++){
+    //     var row = "<tr>" +
+    //         "<td>"+ customerArr[i].customer_id +"</td>" +
+    //         "<td>"+ customerArr[i].customer_first_name +"</td>" +
+    //         "<td>"+ customerArr[i].customer_last_name +"</td>" +
+    //         "<td>"+ customerArr[i].customer_address +"</td>" +
+    //         "</tr>";
+    //     $('tbody').append(row);
+    // }
+}
+
 
 </script>
 
