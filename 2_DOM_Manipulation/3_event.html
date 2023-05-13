@@ -67,9 +67,9 @@
 
         // ------------------------- Mouse Wheel -------------------------
 
-        $('body').on('wheel', () => {
+        /*$('body').on('wheel', () => {
             alert("Mouse wheeled");
-        })
+        })*/
 
         // ------------------------- Keyboard Event -------------------------
 
@@ -93,6 +93,38 @@
                 $('#myTitle').text($('#txt-my').val())
             }
         })
+
+
+
+        //-----------------Focus Events-------------------//
+
+        //focus in -> focus -. focus out -> blur
+
+        //--------focus
+
+        $('#txt-my').on('focus', () =>{
+            console.log("Focused!");
+        })
+
+        //----------focus in
+
+        $('#txt-my').on('focusin', () =>{
+            console.log("Focused In!");
+        })
+
+        //----------focus out
+
+        $('#txt-my').on('focusout', () =>{
+            console.log("Focused Out!");
+        })
+
+        //----------blur
+
+        $('#txt-my').on('blur', () =>{
+            console.log("Focused!");
+        })
+
+        //----------focus in
 
     </script>
 </body>
