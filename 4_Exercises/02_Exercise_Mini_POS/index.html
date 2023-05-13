@@ -112,19 +112,17 @@ $('#btn_add').click(function () {
 
     // alert(JSON.stringify(obj));
 
-    var row = "<tr>" +
-        "<td>"+ customer_id +"</td>" +
-        "<td>"+ customer_first_name +"</td>" +
-        "<td>"+ customer_last_name +"</td>" +
-        "<td>"+ customer_address +"</td>" +
-        "</tr>";
-
-
-    $('tbody').append(row);
-
+    // var row = "<tr>" +
+    //     "<td>"+ customer_id +"</td>" +
+    //     "<td>"+ customer_first_name +"</td>" +
+    //     "<td>"+ customer_last_name +"</td>" +
+    //     "<td>"+ customer_address +"</td>" +
+    //     "</tr>";
+    //
+    //
+    // $('tbody').append(row);
+    addDataToTable();
     customerArr.push(obj);
-
-    console.log(customerArr.length);
 })
 
 function addDataToTable(){
