@@ -96,35 +96,29 @@
 
 
 
-        //-----------------Focus Events-------------------//
+        //----------------- Focus Events -------------------//
 
-        //focus in -> focus -. focus out -> blur
-
-        //--------focus
-
+        // 1. focus in
         $('#txt-my').on('focus', () =>{
             console.log("Focused!");
         })
 
-        //----------focus in
-
+        //  2. focus
         $('#txt-my').on('focusin', () =>{
             console.log("Focused In!");
         })
 
-        //----------focus out
-
+        //  3. focus out
         $('#txt-my').on('focusout', () =>{
             console.log("Focused Out!");
         })
 
-        //----------blur
-
+        //  4. blur
         $('#txt-my').on('blur', () =>{
-            console.log("Focused!");
+            console.log("blur!");
         })
 
-        //----------focus in
+        //----------------- Window Events-------------------//
 
     </script>
 </body>
