@@ -77,6 +77,8 @@
     });
 */
 
+const data = "DATA";
+
 var customerArr = [];
 $('#btn_add').click(function () {
     // var customer_id = document.getElementById("customer_id").value;
@@ -103,12 +105,27 @@ $('#btn_add').click(function () {
         <td>123A, flower Rd, Colombo</td>
     </tr>
     */
+
+    let preData = localStorage.getItem(data);
+    console.log(preData);
+
+    let dataArr = [];
+
+    // undefined, null, "", false -> skip if read else part
+    if (preData){
+        dataArr = JSON.parse(preData);
+    }
+
     var obj = {
         customer_id: customer_id,
         customer_first_name: customer_first_name,
         customer_last_name: customer_last_name,
         customer_address: customer_address
     }
+
+    dataArr.push(obj);
+    console.log("data arr",dataArr);
+    localStorage.setItem(data, JSON.stringify(dataArr));
 
     // alert(JSON.stringify(obj));
 
@@ -121,6 +138,7 @@ $('#btn_add').click(function () {
     //
     //
     // $('tbody').append(row);
+
     addDataToTable();
     customerArr.push(obj);
 })
@@ -135,6 +153,8 @@ function addDataToTable(){
     //         "</tr>";
     //     $('tbody').append(row);
     // }
+
+
 
     customerArr.map((result, index)=>{ // result - value,
         let row = "<tr>" +
