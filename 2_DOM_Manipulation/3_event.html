@@ -122,11 +122,12 @@
         /*    work with window ( browser object model - BOM )*/
 
         // $(window).on('load', ()=> {
-        //     alert("Loaded"); // load to all to web page
+        //     alert("Loaded"); // loaded to all to web page detect
         // })
 
-
-
+        $(window).on('resize',  ()=> {
+            alert("resized ")  // resized window size detect
+        })
     </script>
 </body>
 </html>
