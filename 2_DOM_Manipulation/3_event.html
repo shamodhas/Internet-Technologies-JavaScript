@@ -11,13 +11,20 @@
             width: 80px;
             aspect-ratio: 1/1;
             background: #130f40;
+            border-radius: 100%;
             position: absolute;
+        }
+        #area{
+            background: black;
+            width: 500px;
+            height: 500px;
         }
     </style>
 </head>
 <body>
     <button id="btn-my">clik me</button>
     <div id="follower"></div>
+    <div id="area"></div>
     <script src="../assets/lib/jQuery/jquery-3.6.4.min.js"></script>
     <script>
         // $('#btn-my').on('click', () =>{
@@ -40,10 +47,14 @@
         //     alert("mouse move ( like css hover)");
         // })
 
-        $('body').on('mousemove', (event) =>{
-            let mouseX = event.clientX;
-            let mouseY = event.clientY;
-            $('#follower').css({left: mouseX, top: mouseY})
+        // $('body').on('mousemove', (event) =>{
+        //     let mouseX = event.clientX;
+        //     let mouseY = event.clientY;
+        //     $('#follower').css({left: mouseX-40, top: mouseY-40});
+        // })
+
+        $('#area').on('mouseleave', () =>{
+            alert("mouse move ( like css hover leave)");
         })
 
     </script>
