@@ -43,7 +43,7 @@
         <br>
         <br>
         <label for="fruit">Select a fruit:</label>
-        <select id="fruit">
+        <select id="fruit" name="fruit">
             <option value="apple">Apple</option>
             <option value="banana">Banana</option>
             <option value="orange">Orange</option>
@@ -198,7 +198,9 @@
             /* click submit button and submit and no refresh page */
             $('#myForm').on('submit', (event)=>{
                 event.preventDefault();
-                console.log("Submitted")
+                console.log("Submitted - name : ",event.target.name.value)
+                console.log("Submitted - email : ",event.target.email.value)
+                console.log("Submitted - fruit : ",event.target.fruit.value)
             })
 
     </script>
