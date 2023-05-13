@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3 Event in js</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        #follower{
+            width: 80px;
+            aspect-ratio: 1/1;
+            background: #130f40;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn-my">clik me</button>
+    <div id="follower"></div>
+    <script src="../assets/lib/jQuery/jquery-3.6.4.min.js"></script>
+    <script>
+        // $('#btn-my').on('click', () =>{
+        //     alert("single click");
+        // })
+
+        // $('#btn-my').on('dblclick', () =>{
+        //     alert("double click");
+        // })
+
+        // $('#btn-my').on('mousedown', () =>{
+        //     alert("mouse down ( clicked run )");
+        // })
+
+        // $('#btn-my').on('mouseup', () =>{
+        //     alert("mouse up (click and hold and up run)");
+        // })
+
+        // $('#btn-my').on('mousemove', () =>{
+        //     alert("mouse move ( like css hover)");
+        // })
+
+        $('body').on('mousemove', (event) =>{
+            let mouseX = event.clientX;
+            let mouseY = event.clientY;
+            $('#follower').css({left: mouseX, top: mouseY})
+        })
+
+    </script>
+</body>
+</html>
