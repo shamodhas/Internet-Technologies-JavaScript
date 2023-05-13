@@ -174,22 +174,30 @@
         // ************************* Form Events *************************
             // ----------------- input ------------------- //
 
-            $('#name').on('input', (event)=>{
-                console.log("input name value : "+event.target.value)
-            })
-            $('#email').on('input', (event)=>{
-                console.log("input email value : "+event.target.value)
-            })
+            // $('#name').on('input', (event)=>{
+            //     console.log("input name value : "+event.target.value)
+            // })
+
+            // $('#email').on('input', (event)=>{
+            //     console.log("input email value : "+event.target.value)
+            // })
 
             // ----------------- Change ------------------- //
 
-            $('#fruit').on('change', (event)=>{
-                console.log("changed value : "+event.target.value)
-            })
+            // $('#fruit').on('change', (event)=>{
+            //     console.log("changed value : "+event.target.value)
+            // })
 
             // ----------------- Submit ------------------- //
 
-            $('#myForm').on('submit', ()=>{
+            /* click submit button and submit and refresh page */
+            // $('#myForm').on('submit', ()=>{
+            //     console.log("Submitted")
+            // })
+
+            /* click submit button and submit and no refresh page */
+            $('#myForm').on('submit', (event)=>{
+                event.preventDefault();
                 console.log("Submitted")
             })
 
