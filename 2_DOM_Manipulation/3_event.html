@@ -15,7 +15,7 @@
             position: absolute;
         }
         #area{
-            background: black;
+            background: #8cff00;
             width: 500px;
             height: 500px;
         }
@@ -44,7 +44,7 @@
         // })
 
         // $('#btn-my').on('mousemove', () =>{
-        //     alert("mouse move ( like css hover)");
+        //     alert("mouse moved ( like css hover)");
         // })
 
         // $('body').on('mousemove', (event) =>{
@@ -53,8 +53,12 @@
         //     $('#follower').css({left: mouseX-40, top: mouseY-40});
         // })
 
-        $('#area').on('mouseleave', () =>{
-            alert("mouse move ( like css hover leave)");
+        // $('#area').on('mouseleave', () =>{
+        //     alert("mouse leaved ( like css hover leave)");
+        // })
+
+        $('#area').on('mouseover', () =>{
+            alert("mouse over ( like css hover leave)");
         })
 
     </script>
