@@ -25,8 +25,11 @@
     <button id="btn-my">clik me</button>
     <div id="follower"></div>
     <div id="area"></div>
+    <input id="txt-my" type="text">
     <script src="../assets/lib/jQuery/jquery-3.6.4.min.js"></script>
     <script>
+        // ------------------------- Mouse Event -------------------------
+
         // $('#btn-my').on('click', () =>{
         //     alert("single click");
         // })
@@ -50,15 +53,29 @@
         // $('body').on('mousemove', (event) =>{
         //     let mouseX = event.clientX;
         //     let mouseY = event.clientY;
-        //     $('#follower').css({left: mouseX-40, top: mouseY-40});
+        //     $('#follower').css({left: mouseX-40, top: mouseY-40}); // follow mouse cursor
         // })
 
         // $('#area').on('mouseleave', () =>{
         //     alert("mouse leaved ( go outside element)");
         // })
 
-        $('#area').on('mouseover', () =>{
-            alert("mouse over ( go inside element)");
+        // $('#area').on('mouseover', () =>{
+        //     alert("mouse over ( go inside element)");
+        // })
+
+        // ------------------------- Keyboard Event -------------------------
+
+        // $('#txt-my').on('keydown', () =>{
+        //     alert("key down");
+        // })
+
+        // $('#txt-my').on('keyup', () =>{
+        //     alert("key up");
+        // })
+
+        $('#txt-my').on('keypress', () =>{
+            alert("key press");
         })
 
     </script>
