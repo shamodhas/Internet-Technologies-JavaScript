@@ -77,106 +77,107 @@
     });
 */
 
-const data = "DATA";
+    const data = "DATA";
 
-var customerArr = [];
-$('#btn_add').click(function () {
-    // var customer_id = document.getElementById("customer_id").value;
-    // var customer_first_name = document.getElementById("first_name").value;
-    // var customer_last_name = document.getElementById("last_name").value;
-    // var customer_address = document.getElementById("customer_address").value;
+    var customer_arr = [];
 
-    var customer_id = $('#customer_id').val();
-    var customer_first_name = $('#first_name').val();
-    var customer_last_name = $('#last_name').val();
-    var customer_address =  $('#customer_address').val();
+    function loadData() {
 
-    // console.log(customer_id);
-    // console.log(customer_first_name);
-    // console.log(customer_last_name);
-    // console.log(customer_address);
-
-
-    /*
-    <tr>
-        <td scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>123A, flower Rd, Colombo</td>
-    </tr>
-    */
-
-    let preData = localStorage.getItem(data);
-    console.log(preData);
-
-    let dataArr = [];
-
-    // undefined, null, "", false -> skip if read else part
-    if (preData){
-        dataArr = JSON.parse(preData);
+        let pre_data = localStorage.getItem(data);
+        let customer_data_arr = JSON.parse(pre_data);
+        customer_data_arr.map((result, index) => {
+            var row = "<tr>" +
+                "<td>"+ result.customer_id +"</td>" +
+                "<td>"+ result.customer_first_name +"</td>" +
+                "<td>"+ result.customer_last_name +"</td>" +
+                "<td>"+ result.customer_address +"</td>" +
+                "</tr>";
+            $('tbody').append(row);
+        })
     }
 
-    var obj = {
-        customer_id: customer_id,
-        customer_first_name: customer_first_name,
-        customer_last_name: customer_last_name,
-        customer_address: customer_address
-    }
+    $('#btn_add').click(function () {
+        // var customer_id = document.getElementById("customer_id").value;
+        // var customer_first_name = document.getElementById("first_name").value;
+        // var customer_last_name = document.getElementById("last_name").value;
+        // var customer_address = document.getElementById("customer_address").value;
 
-    dataArr.push(obj);
-    console.log("data arr",dataArr);
-    localStorage.setItem(data, JSON.stringify(dataArr));
+        var customer_id = $('#customer_id').val();
+        var customer_first_name = $('#first_name').val();
+        var customer_last_name = $('#last_name').val();
+        var customer_address =  $('#customer_address').val();
 
-    // alert(JSON.stringify(obj));
-
-    // var row = "<tr>" +
-    //     "<td>"+ customer_id +"</td>" +
-    //     "<td>"+ customer_first_name +"</td>" +
-    //     "<td>"+ customer_last_name +"</td>" +
-    //     "<td>"+ customer_address +"</td>" +
-    //     "</tr>";
-    //
-    //
-    // $('tbody').append(row);
-
-    addDataToTable();
-    customerArr.push(obj);
-})
-
-function addDataToTable(){
-    // for (let customer of customerArr){
-    //     let row = "<tr>" +
-    //         "<td>"+ customer.customer_id +"</td>" +
-    //         "<td>"+ customer.customer_first_name +"</td>" +
-    //         "<td>"+ customer.customer_last_name +"</td>" +
-    //         "<td>"+ customer.customer_address +"</td>" +
-    //         "</tr>";
-    //     $('tbody').append(row);
-    // }
+        // console.log(customer_id);
+        // console.log(customer_first_name);
+        // console.log(customer_last_name);
+        // console.log(customer_address);
 
 
+        /*
+        <tr>
+            <td scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>123A, flower Rd, Colombo</td>
+        </tr>
+        */
 
-    customerArr.map((result, index)=>{ // result - value,
-        let row = "<tr>" +
-            "<td>" + result.customer_id + "</td>" +
-            "<td>" + result.customer_first_name + "</td>" +
-            "<td>" + result.customer_last_name + "</td>" +
-            "<td>" + result.customer_address + "</td>" +
-            "</tr>";
-        $('tbody').append(row);
+        let pre_data = localStorage.getItem(data);
+        console.log("ARR: ", pre_data);
+
+        let data_arr = [];
+
+        // undefine/ null/ "" / false
+        if(pre_data) {
+            data_arr = JSON.parse(pre_data);
+        }
+
+        var obj = {
+            customer_id: customer_id,
+            customer_first_name: customer_first_name,
+            customer_last_name: customer_last_name,
+            customer_address: customer_address
+        }
+
+        data_arr.push(obj);
+        console.log(data_arr);
+        localStorage.setItem(data, JSON.stringify(data_arr));
+
+        loadData();
+
     })
 
-    // for (let i=0; i<customerArr.length; i++){
-    //     var row = "<tr>" +
-    //         "<td>"+ customerArr[i].customer_id +"</td>" +
-    //         "<td>"+ customerArr[i].customer_first_name +"</td>" +
-    //         "<td>"+ customerArr[i].customer_last_name +"</td>" +
-    //         "<td>"+ customerArr[i].customer_address +"</td>" +
-    //         "</tr>";
-    //     $('tbody').append(row);
-    // }
-}
+    $('#btn_update').click(function (){
+        var customer_id = $('#customer_id').val();
+        var customer_first_name = $('#first_name').val();
+        var customer_last_name = $('#last_name').val();
+        var customer_address =  $('#customer_address').val();
 
+        let pre_data = localStorage.getItem(data);
+        console.log("ARR: ", pre_data);
+
+        let data_arr = [];
+
+        // undefine/ null/ "" / false
+        if(pre_data) {
+            data_arr = JSON.parse(pre_data);
+        }
+
+        var obj = {
+            customer_id: customer_id,
+            customer_first_name: customer_first_name,
+            customer_last_name: customer_last_name,
+            customer_address: customer_address
+        }
+
+        data_arr.push(obj);
+        console.log(data_arr);
+        localStorage.setItem(data, JSON.stringify(data_arr));
+
+        loadData();
+    })
+
+    loadData();
 
 </script>
 
