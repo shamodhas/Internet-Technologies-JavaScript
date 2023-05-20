@@ -213,9 +213,20 @@
             alert("not found customer for this index : "+index);
             return;
         }
-        customer_data_arr = customer_data_arr.slice(index)
-        localStorage.setItem(data, JSON.stringify(customer_data_arr));
+
+        var newArr = [];
+        for (let i = 0; i<customer_data_arr.length; i++){
+            if (i !== index){
+                newArr.push(customer_data_arr[i])
+            }
+        }
+        localStorage.setItem(data, JSON.stringify(newArr));
         loadData();
+
+        // customer_data_arr = customer_data_arr.slice(index)
+
+        console.log(customer_data_arr.length)
+        console.log(newArr.length)
     })
 
 
