@@ -100,7 +100,6 @@
     var customer_arr = [];
 
     function loadData() {
-
         let pre_data = localStorage.getItem(data);
         let customer_data_arr = JSON.parse(pre_data);
         console.log(customer_data_arr)
@@ -114,6 +113,27 @@
             $('tbody').append(row);
         })
     }
+
+
+    $('tBody').on('click', 'tr', (event)=>{
+        let row = $(event.target).closest('tr').find('td');
+        // console.log($(event.currentTarget))
+
+        $('tr').removeClass('selected')
+
+        // $(event.currentTarget).addClass('selected'); // 1
+        $(event.target).closest('tr').addClass('selected'); // 2
+
+        // document.getElementById('customer_id').value = row.eq(0).text();
+        // document.getElementById('first_name').value = row.eq(1).text();
+        // document.getElementById('last_name').value = row.eq(2).text();
+        // document.getElementById('customer_address').value = row.eq(3).text()
+
+        $('#customer_id').val(row.eq(0).text());
+        $('#first_name').val(row.eq(1).text());
+        $('#last_name').val(row.eq(2).text());
+        $('#customer_address').val(row.eq(3).text());
+    })
 
     $('#btn_add').click(function () {
         // var customer_id = document.getElementById("customer_id").value;
@@ -179,6 +199,14 @@
         var customer_first_name = $('#first_name').val();
         var customer_last_name = $('#last_name').val();
         var customer_address =  $('#customer_address').val();
+
+        var obj = {
+            customer_id: customer_id,
+            customer_first_name: customer_first_name,
+            customer_last_name: customer_last_name,
+            customer_address: customer_address
+        }
+        localStorage.setItem(customer_id, JSON.stringify(obj));
         //
         // if(customer_id)
         //
@@ -243,28 +271,29 @@
 
 const table = document.getElementById('displayUserInput');
 let selectedRowIndex;
-displaySelectedRowCellValueOnInputFields();
-function displaySelectedRowCellValueOnInputFields(){
-    // start looping from the second row
-    for (let i=1; i<table.rows.length; i++){
-        table.rows[i].onclick = function (){
-            // if table have old selected row , remove old selected row color
-            if (selectedRowIndex) table.rows[selectedRowIndex].className = '';
+// displaySelectedRowCellValueOnInputFields();
+// function displaySelectedRowCellValueOnInputFields(){
+//     // start looping from the second row
+//     for (let i=1; i<table.rows.length; i++){
+//         table.rows[i].onclick = function (){
+//             // if table have old selected row , remove old selected row color
+//             if (selectedRowIndex) table.rows[selectedRowIndex].className = '';
+//
+//             // add selected row color
+//             this.className = 'selected';
+//
+//             // store row index in a variable
+//             selectedRowIndex = this.rowIndex;
+//
+//             //Display select row in text field
+//             document.getElementById('customer_id').value = this.cells[0].innerHTML;
+//             document.getElementById('first_name').value = this.cells[1].innerHTML;
+//             document.getElementById('last_name').value = this.cells[2].innerHTML;
+//             document.getElementById('customer_address').value = this.cells[3].innerHTML;
+//         };
+//     }
+// }
 
-            // add selected row color
-            this.className = 'selected';
-
-            // store row index in a variable
-            selectedRowIndex = this.rowIndex;
-
-            //Display select row in text field
-            document.getElementById('customer_id').value = this.cells[0].innerHTML;
-            document.getElementById('first_name').value = this.cells[1].innerHTML;
-            document.getElementById('last_name').value = this.cells[2].innerHTML;
-            document.getElementById('customer_address').value = this.cells[3].innerHTML;
-        };
-    }
-}
 
 </script>
 
