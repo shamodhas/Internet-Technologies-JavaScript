@@ -207,39 +207,39 @@
     })
 
     loadData();
-
-function addRowToTable(){
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-
-    // insert new row at the end of the table
-    const addRow = table.insertRow(table.rows.length);
-
-    // create new clear input fields and fill new row value
-    addRow.insertCell(0).innerHTML = name;
-    addRow.insertCell(1).innerHTML = email;
-
-    displaySelectedRowCellValueOnInputFields();
-}
-
-function updateSelectedRow(){
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-
-    if (selectedRowIndex) {
-        const cells = table.rows[selectedRowIndex].cells;
-        cells[0].innerHTML = name;
-        cells[1].innerHTML = email;
-    }
-}
-
-function deleteSelectedRow(){
-    // remove row
-    if (selectedRowIndex) table.deleteRow(selectedRowIndex);
-
-    // remove stored selected index
-    selectedRowIndex = undefined;
-}
+//
+// function addRowToTable(){
+//     const name = document.getElementById('name').value;
+//     const email = document.getElementById('email').value;
+//
+//     // insert new row at the end of the table
+//     const addRow = table.insertRow(table.rows.length);
+//
+//     // create new clear input fields and fill new row value
+//     addRow.insertCell(0).innerHTML = name;
+//     addRow.insertCell(1).innerHTML = email;
+//
+//     displaySelectedRowCellValueOnInputFields();
+// }
+//
+// function updateSelectedRow(){
+//     const name = document.getElementById('name').value;
+//     const email = document.getElementById('email').value;
+//
+//     if (selectedRowIndex) {
+//         const cells = table.rows[selectedRowIndex].cells;
+//         cells[0].innerHTML = name;
+//         cells[1].innerHTML = email;
+//     }
+// }
+//
+// function deleteSelectedRow(){
+//     // remove row
+//     if (selectedRowIndex) table.deleteRow(selectedRowIndex);
+//
+//     // remove stored selected index
+//     selectedRowIndex = undefined;
+// }
 
 const table = document.getElementById('displayUserInput');
 let selectedRowIndex;
