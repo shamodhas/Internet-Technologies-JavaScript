@@ -6,7 +6,52 @@
 </head>
 <body>
     <ul>
-
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Faluda</li>
     </ul>
+
+    <br>
+    <br>
+
+    <label>Enter your beverage</label>
+    <br>
+    <input type="text" name="beverage-input">
+    <br>
+    <br>
+    <button id="submit-btn" class="btn">Submit</button>
+    <script src="../assets/lib/jQuery/jquery-3.6.4.min.js"></script>
+    <script>
+        // --------------- list item click event ---------------
+
+        // $('li').on('click', (event)=>{
+        //     // get clicked element text
+        //     console.log($(event.target).text())
+        //     // $('input[name = "beverage-input"]').value = $(event.target).text();
+        // })
+
+        // $('ul').on('click', 'li',  (event)=>{
+        //     // console.log($(event.target).text())
+        //     $('li').css("color", "black")
+        //     $(event.target).css("color", "red")
+        // })
+
+        // --------------- this ---------------
+        /* can't use this keyword arrow function, use with normal function*/
+        $('ul').on('click', 'li', function (event){
+            // console.log($(event.target).text())
+            console.log($(this).text())
+            $('li').css("color", "black")
+            $(event.target).css("color", "red")
+        })
+
+        // --------------- submit ---------------
+        $('#submit-btn').on('click', ()=>{
+            let text = $('input[name = "beverage-input"]').val();
+            if (!text)alert("Invalid input..!");
+            else $('ul').append(`<li>${text}</li>`)
+        })
+
+    </script>
 </body>
 </html>
