@@ -89,15 +89,8 @@
 <script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 
 <script>
-/*
-    document.getElementById('btn_add').addEventListener('click', function () {
-        // function body here
-    });
-*/
 
     const data = "DATA";
-
-    var customer_arr = [];
 
     function loadData() {
         $('tBody tr').remove();
@@ -113,7 +106,6 @@
             $('tbody').append(row);
         })
     }
-
 
     $('tBody').on('click', 'tr', (event)=>{
         let row = $(event.target).closest('tr').find('td');
@@ -193,6 +185,7 @@
             alert("not found customer for this index : "+index);
             return;
         }
+
         // console.log(customer_data_arr[index]);
 
         customer_data_arr[index].id = customer_id;
@@ -214,89 +207,34 @@
             return;
         }
 
-        var newArr = [];
-        for (let i = 0; i<customer_data_arr.length; i++){
-            if (i !== index){
-                newArr.push(customer_data_arr[i])
-            }
-        }
-        localStorage.setItem(data, JSON.stringify(newArr));
+        // var newArr = [];
+        // for (let i = 0; i<customer_data_arr.length; i++){
+        //     if (i !== index){
+        //         newArr.push(customer_data_arr[i])
+        //     }
+        // }
+        // localStorage.setItem(data, JSON.stringify(newArr));
+        // loadData();
+
+        customer_data_arr.splice(index, 1);
+        localStorage.setItem(data, JSON.stringify(customer_data_arr));
         loadData();
 
-        // customer_data_arr = customer_data_arr.slice(index)
+        reset();
+    })
 
-        console.log(customer_data_arr.length)
-        console.log(newArr.length)
+    $('#btn_reset').on('click', ()=>{
+        reset();
+    })
 
-        $('#customer_id').val("")
+    function reset(){
+        $('#customer_id').val("");
         $('#first_name').val("");
         $('#last_name').val("");
         $('#customer_address').val("");
-    })
-
-
+    }
 
     loadData();
-
-// function addRowToTable(){
-//     const name = document.getElementById('name').value;
-//     const email = document.getElementById('email').value;
-//
-//     // insert new row at the end of the table
-//     const addRow = table.insertRow(table.rows.length);
-//
-//     // create new clear input fields and fill new row value
-//     addRow.insertCell(0).innerHTML = name;
-//     addRow.insertCell(1).innerHTML = email;
-//
-//     displaySelectedRowCellValueOnInputFields();
-// }
-//
-// function updateSelectedRow(){
-//     const name = document.getElementById('name').value;
-//     const email = document.getElementById('email').value;
-//
-//     if (selectedRowIndex) {
-//         const cells = table.rows[selectedRowIndex].cells;
-//         cells[0].innerHTML = name;
-//         cells[1].innerHTML = email;
-//     }
-// }
-//
-// function deleteSelectedRow(){
-//     // remove row
-//     if (selectedRowIndex) table.deleteRow(selectedRowIndex);
-//
-//     // remove stored selected index
-//     selectedRowIndex = undefined;
-// }
-
-const table = document.getElementById('displayUserInput');
-let selectedRowIndex;
-// displaySelectedRowCellValueOnInputFields();
-// function displaySelectedRowCellValueOnInputFields(){
-//     // start looping from the second row
-//     for (let i=1; i<table.rows.length; i++){
-//         table.rows[i].onclick = function (){
-//             // if table have old selected row , remove old selected row color
-//             if (selectedRowIndex) table.rows[selectedRowIndex].className = '';
-//
-//             // add selected row color
-//             this.className = 'selected';
-//
-//             // store row index in a variable
-//             selectedRowIndex = this.rowIndex;
-//
-//             //Display select row in text field
-//             document.getElementById('customer_id').value = this.cells[0].innerHTML;
-//             document.getElementById('first_name').value = this.cells[1].innerHTML;
-//             document.getElementById('last_name').value = this.cells[2].innerHTML;
-//             document.getElementById('customer_address').value = this.cells[3].innerHTML;
-//         };
-//     }
-// }
-
-
 </script>
 
 </body>
