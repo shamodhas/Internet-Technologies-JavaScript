@@ -2,8 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mini Pos By Akash</title>
+    <title>Mini Pos By Shamodha</title>
     <link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css">
+    <style>
+        table{
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        table, th, td{
+            border: 1px solid #000000;
+        }
+        table th, table td{
+            padding: 10px;
+            text-align: left;
+        }
+        .selected{
+            background-color: #0a58ca;
+            color: #FFFFFF;
+        }
+    </style>
 </head>
 <body>
 
@@ -52,8 +70,8 @@
 
     </section>
     <section class="col-8">
-        <table class="table">
-            <thead class="thead-dark">
+        <table id="displayUserInput" class="table">
+            <thead class="">
             <tr>
                 <th scope="col">Customer ID</th>
                 <th scope="col">Customer First Name</th>
@@ -85,6 +103,7 @@
 
         let pre_data = localStorage.getItem(data);
         let customer_data_arr = JSON.parse(pre_data);
+        console.log(customer_data_arr)
         customer_data_arr.map((result, index) => {
             var row = "<tr>" +
                 "<td>"+ result.customer_id +"</td>" +
@@ -123,7 +142,7 @@
         */
 
         let pre_data = localStorage.getItem(data);
-        console.log("ARR: ", pre_data);
+        // console.log("ARR: ", pre_data);
 
         let data_arr = [];
 
@@ -140,44 +159,112 @@
         }
 
         data_arr.push(obj);
-        console.log(data_arr);
+        // console.log(data_arr);
         localStorage.setItem(data, JSON.stringify(data_arr));
 
-        loadData();
-
+        var row = "<tr>" +
+            "<td>"+ obj.customer_id +"</td>" +
+            "<td>"+ obj.customer_first_name +"</td>" +
+            "<td>"+ obj.customer_last_name +"</td>" +
+            "<td>"+ obj.customer_address +"</td>" +
+            "</tr>";
+        $('tbody').append(row);
+        // loadData();
     })
 
     $('#btn_update').click(function (){
+        // let data = localStorage.getItem(data);
+        //
         var customer_id = $('#customer_id').val();
         var customer_first_name = $('#first_name').val();
         var customer_last_name = $('#last_name').val();
         var customer_address =  $('#customer_address').val();
-
-        let pre_data = localStorage.getItem(data);
-        console.log("ARR: ", pre_data);
-
-        let data_arr = [];
-
-        // undefine/ null/ "" / false
-        if(pre_data) {
-            data_arr = JSON.parse(pre_data);
-        }
-
-        var obj = {
-            customer_id: customer_id,
-            customer_first_name: customer_first_name,
-            customer_last_name: customer_last_name,
-            customer_address: customer_address
-        }
-
-        data_arr.push(obj);
-        console.log(data_arr);
-        localStorage.setItem(data, JSON.stringify(data_arr));
-
-        loadData();
+        //
+        // if(customer_id)
+        //
+        // let data = localStorage.getItem(data);
+        // console.log("ARR: ", pre_data);
+        //
+        // // let data_arr = [];
+        //
+        // // undefine/ null/ "" / false
+        // if(pre_data) {
+        //     data_arr = JSON.parse(pre_data);
+        // }
+        //
+        // var obj = {
+        //     customer_id: customer_id,
+        //     customer_first_name: customer_first_name,
+        //     customer_last_name: customer_last_name,
+        //     customer_address: customer_address
+        // }
+        //
+        // data_arr.push(obj);
+        // console.log(data_arr);
+        // localStorage.setItem(data, JSON.stringify(data_arr));
+        //
+        // loadData();
     })
 
     loadData();
+
+function addRowToTable(){
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    // insert new row at the end of the table
+    const addRow = table.insertRow(table.rows.length);
+
+    // create new clear input fields and fill new row value
+    addRow.insertCell(0).innerHTML = name;
+    addRow.insertCell(1).innerHTML = email;
+
+    displaySelectedRowCellValueOnInputFields();
+}
+
+function updateSelectedRow(){
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    if (selectedRowIndex) {
+        const cells = table.rows[selectedRowIndex].cells;
+        cells[0].innerHTML = name;
+        cells[1].innerHTML = email;
+    }
+}
+
+function deleteSelectedRow(){
+    // remove row
+    if (selectedRowIndex) table.deleteRow(selectedRowIndex);
+
+    // remove stored selected index
+    selectedRowIndex = undefined;
+}
+
+const table = document.getElementById('displayUserInput');
+let selectedRowIndex;
+displaySelectedRowCellValueOnInputFields();
+function displaySelectedRowCellValueOnInputFields(){
+    // start looping from the second row
+    for (let i=1; i<table.rows.length; i++){
+        table.rows[i].onclick = function (){
+            // if table have old selected row , remove old selected row color
+            if (selectedRowIndex) table.rows[selectedRowIndex].className = '';
+
+            // add selected row color
+            this.className = 'selected';
+
+            // store row index in a variable
+            selectedRowIndex = this.rowIndex;
+
+            //Display select row in text field
+            document.getElementById('customer_id').value = this.cells[0].innerHTML;
+            document.getElementById('first_name').value = this.cells[1].innerHTML;
+            document.getElementById('last_name').value = this.cells[2].innerHTML;
+            document.getElementById('customer_address').value = this.cells[3].innerHTML;
+        };
+    }
+}
 
 </script>
 
